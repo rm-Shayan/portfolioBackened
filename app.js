@@ -29,7 +29,7 @@ app.use("/testimonial", testimonialRoutes);
 app.use(errorHandler);
 
 // Deployment-friendly port
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 500;
 
 app.listen(PORT, () => {
     console.log(`🚀 Mail server running on port ${PORT}`);

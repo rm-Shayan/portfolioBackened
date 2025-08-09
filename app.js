@@ -36,4 +36,7 @@ const PORT = process.env.PORT || 500;
 
 app.listen(PORT, () => {
     console.log(`🚀 Mail server running on port ${PORT}`);
+    if (process.env.RAILWAY_STATIC_URL) {
+        console.log(`🌐 Public URL: ${process.env.RAILWAY_STATIC_URL}`);
+    }
 });

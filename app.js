@@ -34,10 +34,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 
-app.get('/health', (req, res) => {
-  res.send('Service is up and running');
-});
-
 const PORT = process.env.PORT || 500;
 
 app.listen(PORT, () => {

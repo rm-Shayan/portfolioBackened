@@ -6,9 +6,10 @@
   "author": "Rao Muhammad Shayan",
   "type": "module",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "start": "node app.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "dependencies": {
     "accepts": "^2.0.0",
     "async": "^3.2.6",

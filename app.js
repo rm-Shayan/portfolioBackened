@@ -31,5 +31,5 @@ app.use(errorHandler);
 // Deployment-friendly port
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Mail server running on port ${PORT}`);
+  console.log(`🚀 Mail serve running on port ${PORT}`);
 });

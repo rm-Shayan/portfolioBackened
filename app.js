@@ -29,6 +29,9 @@ app.use("/testimonial", testimonialRoutes);
 app.use(errorHandler);
 
 // Deployment-friendly port
+if (process.env.NODE_ENV !== "production") {
+    dotenv.config();
+}
 const PORT = process.env.PORT || 500;
 
 app.listen(PORT, () => {

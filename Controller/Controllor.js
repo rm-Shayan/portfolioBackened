@@ -14,14 +14,14 @@ export async function sendEmail(req, res) {
     });
 
     const info = await transporter.sendMail({
-       to:  process.env.EMAIL_USER,
-      from:req.body.from,
-      name:req.body.name,    
+      from: `"${req.body.name}" <${process.env.EMAIL_USER}>`, // sender = tumhara gmail
+      to: process.env.EMAIL_USER, // receiver = tumhara gmail
+      replyTo: req.body.email, // user ka email jisko reply jayega
       subject: req.body.subject,
-      text: req.body.text,
+      text: `From: ${req.body.name} <${req.body.email}>\n\n${req.body.text}`,
     });
 
-    res.json({ message: "Email sent successfully", info });
+    res.json({ message: "✅ Email sent successfully", info });
   } catch (err) {
     console.error("❌ Email error:", err);
     res.status(400).json({ error: err.message });

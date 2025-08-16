@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 import emailRoutes from "./route/route.js";
 import testimonialRoutes from "./route/TestimonialRoute.js";
 import errorHandler from "./middleware/errorHandler.js";
-
+import cvRouter from "./route/CvRoute.js"
 dotenv.config();
 const app = express();
 
@@ -24,7 +24,10 @@ app.set("views", path.join(__dirname, "views"));
 // Routes
 app.use("/send-email", emailRoutes);
 app.use("/testimonial", testimonialRoutes);
-
+app.get("/cv-download", (req, res) => {
+  const filePath = path.resolve("Assets/cv.pdf");
+ res.sendFile(filePath)
+});
 // Error middleware
 app.use(errorHandler);
 
